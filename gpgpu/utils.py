@@ -3,7 +3,6 @@ import pyopencl as cl
 from typing import Tuple
 from .core import GPGPUContext
 
-# Common OpenCL kernel sources
 VECTOR_ADD_KERNEL = """
 __kernel void vector_add(__global const float* a,
                         __global const float* b,
@@ -108,21 +107,18 @@ class GPGPUOperations:
         """
         if a.shape != b.shape:
             raise ValueError("Vectors must have the same shape")
-            
-        # Transfer data to device
+
         a_buf = self.context.to_device(a)
         b_buf = self.context.to_device(b)
         result_buf = self.context.to_device(np.zeros_like(a))
-        
-        # Execute kernel
+
         self.context.execute_kernel(
             self.vector_add_program.vector_add,
             (a.shape[0],),
             None,
             a_buf, b_buf, result_buf
         )
-        
-        # Get result
+
         return self.context.from_device(result_buf, a.shape, a.dtype)
     
     def matrix_multiply(self, a: np.ndarray, b: np.ndarray) -> np.ndarray:
@@ -141,8 +137,7 @@ class GPGPUOperations:
             
         M, K = a.shape
         K, N = b.shape
-        
-        # Transfer data to device
+ 
         a_buf = self.context.to_device(a)
         b_buf = self.context.to_device(b)
         result_buf = self.context.to_device(np.zeros((M, N), dtype=a.dtype))
@@ -155,7 +150,6 @@ class GPGPUOperations:
             a_buf, b_buf, result_buf, np.int32(M), np.int32(N), np.int32(K)
         )
         
-        # Get result
         return self.context.from_device(result_buf, (M, N), a.dtype)
     
     def vector_multiply(self, a: np.ndarray, b: np.ndarray) -> np.ndarray:
