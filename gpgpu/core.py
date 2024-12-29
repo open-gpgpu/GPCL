@@ -24,14 +24,12 @@ class GPGPUContext:
     def _setup_context(self):
         """Set up OpenCL context and command queue."""
         try:
-            # Get platforms
             platforms = cl.get_platforms()
             if not platforms:
                 raise RuntimeError("No OpenCL platforms found")
             
             platform = platforms[self.platform_index]
-            
-            # Get devices
+
             devices = platform.get_devices(device_type=self.device_type)
             if not devices:
                 logger.warning(f"No {self.device_type} devices found, falling back to CPU")
