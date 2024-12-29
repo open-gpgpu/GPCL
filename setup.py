@@ -2,7 +2,6 @@ from setuptools import setup, find_packages, Extension
 import pybind11
 import numpy as np
 
-# C++ extension
 ext_modules = [
     Extension(
         "gpgpu.core_ops",
@@ -19,7 +18,7 @@ ext_modules = [
 
 setup(
     name="gpgpu",
-    version="0.1.0",
+    version="0.1.1",
     packages=find_packages(),
     install_requires=[
         "pyopencl>=2022.1",
@@ -28,18 +27,11 @@ setup(
         "pybind11>=2.6.0",
     ],
     ext_modules=ext_modules,
-    author="Your Name",
-    author_email="your.email@example.com",
+    author="OpenGPGPU Team",
+    author_email="contact@rndmcoolawsmgrbg.lol",
     description="A lightweight GPGPU module using PyOpenCL and C++ extensions",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/gpgpu",
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
-        "Intended Audience :: Developers",
-        "Topic :: Scientific/Engineering :: Artificial Intelligence",
-    ],
+    url="https://github.com/open-gpgpu/gpgpu",
     python_requires=">=3.7",
 )

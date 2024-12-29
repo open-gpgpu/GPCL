@@ -1,12 +1,11 @@
 import numpy as np
-import logging
-from gpgpu import GPGPUContext
+from gpgpu import GPGPUOperations
 
-device = GPGPUContext()
+ops = GPGPUOperations(prefer_cpp=True)
 
 a = np.random.rand(1000000).astype(np.float32)
 b = np.random.rand(1000000).astype(np.float32)
 
-result = device.vector_add(a, b)
+result = ops.vector_add(a, b)
 
 print(result)
