@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPCL - GPU Computing Library</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex flex-col">
+        <header class="bg-white shadow">
+            <nav class="container mx-auto px-6 py-3">
+                <div class="flex justify-between items-center">
+                    <div class="text-xl font-bold text-gray-800">GPCL</div>
+                    <div class="hidden md:flex space-x-4">
+                        <a href="/" class="text-gray-600 hover:text-gray-800">Home</a>
+                        <a href="https://github.com/open-gpgpu/GPCL/blob/main/docs.md" class="text-gray-600 hover:text-gray-800">Docs</a>
+                        <a href="https://github.com/open-gpgpu/GPCL/" class="text-gray-600 hover:text-gray-800">GitHub</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="flex-grow">
+            <div class="container mx-auto px-6 py-16">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 lg:pr-24 md:pr-16">
+                        <h1 class="text-4xl font-bold text-gray-800 mb-4">GPCL - GPU Computing Library</h1>
+                        <p class="text-xl text-gray-600 mb-8">Easy-to-use GPGPU acceleration for Python. Accelerated using OpenCL and C++.</p>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/open-gpgpu/GPCL/" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                                Get Started
+                            </a>
+                            <a href="https://github.com/open-gpgpu/GPCL/blob/main/docs.md" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="bg-white py-16">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Key Features</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-gray-100 p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Vector Operations</h3>
+                            <p class="text-gray-600">Perform fast vector addition, multiplication, and dot products on the GPU.</p>
+                        </div>
+                        <div class="bg-gray-100 p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Matrix Operations</h3>
+                            <p class="text-gray-600">Accelerate matrix multiplication and transposition with GPU power.</p>
+                        </div>
+                        <div class="bg-gray-100 p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Easy Integration</h3>
+                            <p class="text-gray-600">NumPy support baked in.</p>
+                        </div>
+                        <div class="bg-gray-100 p-6 rounded-lg"></div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Easy to use</h3>
+                            <p class="text-gray-600">Implement the functions and go with the flow.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mx-auto px-6 py-16">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Get Started in Minutes</h2>
+                <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+                    <pre class="text-green-400 text-sm overflow-x-auto">
+<code>
+pip install gpgpu
+
+from gpgpu.core import GPGPUContext
+
+ctx = GPGPUContext(device_type="GPU")
+result = ctx.vector_add(array1, array2)
+</code>
+                    </pre>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-gray-800 text-white py-8">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <p>&copy; 2025 GPCL. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
